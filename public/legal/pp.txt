@@ -1,0 +1,94 @@
+# Privacy Policy
+
+Last Updated: January 16, 2025
+
+## 1. Information We Collect
+
+### 1.1 Personal Information
+- Name and email address
+- Educational information
+- Account preferences
+- Country and language settings
+
+### 1.2 Usage Data
+- Login activity and device information
+- Feature usage patterns
+- Document processing history
+- Study session data
+
+### 1.3 User Content
+- Uploaded documents
+- Generated study materials
+- Audio recordings
+- User annotations
+
+## 2. How We Use Your Information
+
+### 2.1 Service Provision
+- Process and store documents
+- Generate study materials
+- Manage user accounts
+- Provide customer support
+
+### 2.2 Service Improvement
+- Analyze feature usage
+- Improve algorithms
+- Debug issues
+- Enhance user experience
+
+## 3. Data Storage and Security
+
+### 3.1 Data Storage
+- Industry-standard encryption
+- Secure cloud storage
+- Regular security audits
+- Backup procedures
+
+### 3.2 Data Retention
+- Account data retained while active
+- Content deleted 30 days after account closure
+- Usage data anonymized after 12 months
+
+## 4. User Rights
+
+### 4.1 Access and Control
+Users can:
+- Access their personal data
+- Request data correction
+- Download their content
+- Delete their account
+
+### 4.2 Data Portability
+- Export study materials
+- Transfer content to other services
+- Receive data in common formats
+
+## 5. Third-Party Services
+
+### 5.1 Service Providers
+We may share data with:
+- Cloud storage providers
+- Payment processors
+- Analytics services
+- Customer support tools
+
+### 5.2 Data Processing Agreements
+- All providers meet security standards
+- Data processing agreements in place
+- Regular security assessments
+
+## 6. Cookies and Tracking
+
+### 6.1 Cookie Usage
+We use cookies for:
+- Authentication
+- Preferences
+- Analytics
+- Security
+
+### 6.2 Tracking Options
+Users can:
+- Manage cookie preferences
+- Opt-out of analytics
+- Use do-not-track settings
+

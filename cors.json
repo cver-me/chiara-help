@@ -1,0 +1,30 @@
+[
+  {
+    "origin": [
+      "https://firestore.googleapis.com",
+      "https://*.cloudflareinsights.com",
+      "https://*.googleapis.com",
+      "https://*.google.com",
+      "https://*.firebasestorage.googleapis.com",
+      "https://firebasestorage.googleapis.com",
+      "https://*.firebasestorage.app",
+      "http://localhost:5173",
+      "http://localhost:5002"
+    ],
+    "method": ["GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": [
+      "Content-Type",
+      "Authorization",
+      "Content-Length",
+      "User-Agent",
+      "x-goog-*",
+      "X-Firebase-AppCheck",
+      "Access-Control-Allow-Origin",
+      "Origin",
+      "Accept",
+      "X-Requested-With",
+      "Range"
+    ]
+  }
+]

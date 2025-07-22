@@ -1,0 +1,260 @@
+/* Essential styles for markdown chat messages */
+
+/* Base typography and layout */
+.chat-markdown {
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Make sure the container has normal whitespace handling */
+.markdown-content {
+  white-space: normal !important;
+}
+
+/* Headings */
+.chat-markdown h1,
+.chat-markdown h2,
+.chat-markdown h3,
+.chat-markdown h4,
+.chat-markdown h5,
+.chat-markdown h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 1.3rem 0 0.8rem 0;
+}
+
+.chat-markdown h1 {
+  font-size: 1.5rem;
+}
+.chat-markdown h2 {
+  font-size: 1.25rem;
+}
+.chat-markdown h3,
+.chat-markdown h4,
+.chat-markdown h5,
+.chat-markdown h6 {
+  font-size: 1.1rem;
+}
+
+/* Remove top margin from first heading */
+.chat-markdown h1:first-child,
+.chat-markdown h2:first-child,
+.chat-markdown h3:first-child,
+.chat-markdown h4:first-child,
+.chat-markdown h5:first-child,
+.chat-markdown h6:first-child {
+  margin-top: 0;
+}
+
+/* Paragraphs */
+.chat-markdown p {
+  margin: 0.8rem 0;
+  white-space: normal;
+}
+
+.chat-markdown p:first-child {
+  margin-top: 0;
+}
+.chat-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+/* Improve spacing after paragraphs that look like section headers */
+.chat-markdown p strong:only-child,
+.chat-markdown p:has(strong:only-child) {
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.chat-markdown ul,
+.chat-markdown ol {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+}
+
+.chat-markdown ul {
+  list-style-type: disc;
+}
+.chat-markdown ol {
+  list-style-type: decimal;
+}
+
+/* List items */
+.chat-markdown li {
+  margin-bottom: 0.5rem;
+  white-space: normal;
+  display: list-item;
+}
+
+.chat-markdown li:last-child {
+  margin-bottom: 0;
+}
+
+/* Add spacing for items with math or inline elements */
+.chat-markdown li > .katex,
+.chat-markdown li em,
+.chat-markdown li strong {
+  margin: 0 0.1rem;
+}
+
+/* Spacing between different element types */
+.chat-markdown > * + * {
+  margin-top: 0.8rem;
+}
+
+/* Special handling for elements that often serve as section dividers */
+.chat-markdown p:has(strong:only-child) + p,
+.chat-markdown p:has(em:only-child) + p {
+  margin-top: 1rem;
+}
+
+/* Links */
+.chat-markdown a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chat-markdown a:hover {
+  text-decoration: none;
+}
+
+/* Blockquotes */
+.chat-markdown blockquote {
+  border-left: 3px solid #d6d3d1;
+  padding-left: 1rem;
+  margin: 0.75rem 0;
+  color: #57534e;
+  font-style: italic;
+}
+
+/* Code blocks and inline code - FIXED */
+.chat-markdown code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* Specifically target inline code */
+.chat-markdown code.inline-code {
+  background-color: #f5f5f4;
+  color: #44403c;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  display: inline;
+  white-space: normal;
+  margin: 0 0.15rem;
+}
+
+/* For inline code within paragraphs and list items */
+.chat-markdown p code:not(.math),
+.chat-markdown li code:not(.math),
+.chat-markdown h1 code:not(.math),
+.chat-markdown h2 code:not(.math),
+.chat-markdown h3 code:not(.math),
+.chat-markdown h4 code:not(.math),
+.chat-markdown h5 code:not(.math),
+.chat-markdown h6 code:not(.math),
+.chat-markdown a code:not(.math) {
+  background-color: #f5f5f4;
+  color: #44403c;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  display: inline;
+  white-space: normal;
+  margin: 0 0.15rem;
+}
+
+/* Make sure code blocks aren't affected by inline code styles */
+.chat-markdown div.bg-stone-200 code {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  display: block;
+  white-space: pre;
+}
+
+/* Code blocks */
+.chat-markdown pre {
+  background-color: transparent;
+  margin: 0.75rem 0;
+  padding: 0;
+  overflow-x: visible;
+}
+
+.chat-markdown pre code {
+  white-space: pre;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
+
+/* Tables */
+.chat-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.9em;
+}
+
+.chat-markdown th {
+  background-color: #f5f5f4;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem;
+  border: 1px solid #e7e5e4;
+}
+
+.chat-markdown td {
+  padding: 0.5rem;
+  border: 1px solid #e7e5e4;
+}
+
+/* KaTeX/LaTeX math expressions */
+.chat-markdown .katex-display {
+  margin: 1.2rem 0 !important;
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: normal !important;
+}
+
+.chat-markdown .katex {
+  white-space: normal !important;
+  font-size: 1em;
+}
+
+/* Add spacing around math formulas */
+.chat-markdown p + .katex-display,
+.chat-markdown .katex-display + p {
+  margin-top: 1.2rem !important;
+}
+
+/* Custom code block styling */
+.chat-markdown div.bg-stone-200 {
+  margin: 0.75rem 0;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.chat-markdown div.bg-stone-200 div.bg-stone-300 {
+  background-color: #e7e5e4;
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #44403c;
+}
+
+.chat-markdown div.bg-stone-200 pre {
+  background-color: #f5f5f4;
+  padding: 0.75rem;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #44403c;
+}

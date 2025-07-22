@@ -1,0 +1,75 @@
+// storage.rules
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper functions
+    function isValidFileType() {
+      let contentType = request.resource.contentType;
+      let validTypes = [
+        'text/plain',
+        'application/pdf',
+        'text/markdown',
+        'audio/mpeg',      // .mp3
+        'audio/mp4',       // .m4a
+        'audio/x-m4a',     // Alternative MIME type for .m4a
+        'audio/wav',       // .wav
+        'audio/x-wav',     // Alternative MIME type for .wav
+        'audio/ogg',       // .ogg
+        'audio/x-ms-wma',  // .wma
+        'audio/aac',       // .aac
+        'audio/flac'       // .flac
+      ];
+      return contentType in validTypes;
+    }
+
+    function isValidFileSize() {
+      return request.resource.size <= 400 * 1024 * 1024; // 400MB
+    }
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Allow read access to temp PDF files for a short time
+    match /temp/pdf/{fileName} {
+      allow read: if request.auth != null 
+                  && resource.metadata.createdBy == request.auth.uid
+                  && resource.metadata.createdAt > (request.time.toMillis() - duration.value(1, 'h'));
+      // Only allow Cloud Functions to write to this path
+      allow write: if false;
+    }
+
+    // Base rule for all user content
+    match /users/{userId}/docs/{courseId}/{docId}/{fileName} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId)
+        && isValidFileType()
+        && isValidFileSize();
+      allow delete: if isOwner(userId);
+    }
+
+    // Allow access to courses collection
+    match /users/{userId}/courses/{courseId} {
+      allow read: if isOwner(userId);
+    }
+
+    // Fallback rule for user's root directory
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+    }
+
+    // Allow listing of course directories
+    match /users/{userId}/docs/{courseId} {
+      allow read: if isOwner(userId);
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+      
+      match /docs/{docId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /mindmaps/{mindMapId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /flashcards/{flashcardId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+      }
+      
+      match /courses/{courseName} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+      
+      match /progress/{docId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+      }
+      
+    }
+    
+    match /userProfiles/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId
+        && ( !('membership' in request.resource.data) || request.resource.data.membership == 'free' );
+    }
+
+    // Allow users to read their own usage stats, but not write them
+    match /usageStats/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      // Deny write implicitly by not adding an 'allow write' rule
+    }
+
+    
+  }
+}

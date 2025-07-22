@@ -1,0 +1,129 @@
+# Terms of Service
+
+Last Updated: January 16, 2025
+
+## 1. Introduction
+
+Welcome to Chiara ("Platform", "we", "us", or "our"). By accessing or using our Platform, you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the service.
+
+## 2. Services Description
+
+Chiara provides document processing, organization, and learning tools including:
+- Document upload and processing capabilities
+- Audio transcription services
+- Study note generation
+- Mind map creation
+- Flashcard generation
+- Interactive study sessions
+
+## 3. Account Registration and Security
+
+### 3.1 Account Creation
+- You must register for an account to access our services
+- You must provide accurate, current, and complete information
+- You must be at least 13 years old to create an account
+- You are responsible for maintaining the confidentiality of your account credentials
+
+### 3.2 Account Security
+- You are responsible for all activities under your account
+- You must immediately notify us of any unauthorized use
+- We reserve the right to disable accounts that violate our terms
+
+## 4. User Content and Rights
+
+### 4.1 Content Ownership
+- You retain all rights to your uploaded content
+- You grant us a limited license to host, store, and process your content
+- We do not claim ownership of your uploaded materials
+
+### 4.2 Prohibited Content
+Users may not upload content that:
+- Infringes on intellectual property rights
+- Contains malicious code or viruses
+- Violates any applicable laws
+- Contains inappropriate or offensive material
+- Interferes with platform functionality
+
+## 5. Platform Usage Rules
+
+### 5.1 Acceptable Use
+Users agree to:
+- Use the service for personal educational purposes
+- Comply with all applicable laws and regulations
+- Respect other users' privacy and rights
+- Maintain appropriate conduct in interactive features
+
+### 5.2 Prohibited Activities
+Users may not:
+- Attempt to bypass platform security
+- Scrape or harvest platform data
+- Share account access with others
+- Use the service for commercial purposes without permission
+- Interfere with platform performance
+
+## 6. Payments and Subscriptions
+
+### 6.1 Pricing
+- All pricing is subject to change with notice
+- Fees are non-refundable unless required by law
+- Currency and payment methods may vary by region
+
+### 6.2 Subscription Terms
+- Subscriptions automatically renew unless cancelled
+- Users may cancel at any time
+- No refunds for partial subscription periods
+
+## 7. Privacy and Data Protection
+
+Users should refer to our Privacy Policy for detailed information about:
+- Data collection and usage
+- Information security measures
+- User rights regarding personal data
+- Data retention practices
+
+## 8. Intellectual Property
+
+### 8.1 Platform Content
+- All platform features, code, and original content are protected by intellectual property laws
+- Users may not copy or modify platform content without permission
+
+### 8.2 User License
+Users receive a limited, non-exclusive license to:
+- Access platform features
+- Use generated study materials for personal use
+- Download and store their own content
+
+## 9. Termination
+
+### 9.1 Account Termination
+We may terminate or suspend access to our service immediately if:
+- You breach these Terms
+- You violate our acceptable use policies
+- We are required to do so by law
+- We decide to discontinue the service
+
+### 9.2 Effect of Termination
+Upon termination:
+- Access to services will cease
+- User content may be deleted after 30 days
+- Paid subscriptions will be cancelled
+
+## 10. Disclaimers and Limitations
+
+### 10.1 Service Warranty
+- Services are provided "as is"
+- We do not guarantee uninterrupted service
+- We are not responsible for content accuracy
+- We do not guarantee study outcomes
+
+### 10.2 Limitation of Liability
+- We are not liable for indirect damages
+- Our liability is limited to subscription fees paid
+- Some jurisdictions may not allow these limitations
+
+## 11. Changes to Terms
+
+We reserve the right to modify these terms at any time. We will notify users of significant changes via:
+- Email notification
+- Platform announcements
+- Service notifications

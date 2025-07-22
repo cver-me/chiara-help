@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Base and Reset Styles
+   ========================================================================== */
+
+/* Disable selection globally initially to allow fine-grained control */
+* {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Custom selection styling */
+::selection {
+  background-color: rgba(
+    59,
+    130,
+    246,
+    0.3
+  ) !important; /* Custom blue highlight */
+  color: inherit !important;
+}
+
+/* Main container for markdown content */
+.markdown-custom-spacing {
+  cursor: default !important; /* Default cursor for non-text areas */
+  transition: opacity 300ms ease-in-out !important;
+  -webkit-tap-highlight-color: transparent;
+  overflow-wrap: break-word !important; /* Ensure content can wrap */
+  word-wrap: break-word !important;
+  word-break: break-word !important; /* Safer than break-all */
+  display: block !important; /* Ensure proper flow */
+}
+
+/* ==========================================================================
+   Text Selection Enabling & Layout Fixes
+   ========================================================================== */
+
+/* Enable text selection only on specific content elements and their children */
+.markdown-custom-spacing p,
+.markdown-custom-spacing h1,
+.markdown-custom-spacing h2,
+.markdown-custom-spacing h3,
+.markdown-custom-spacing h4,
+.markdown-custom-spacing h5,
+.markdown-custom-spacing h6,
+.markdown-custom-spacing li,
+.markdown-custom-spacing a,
+.markdown-custom-spacing blockquote,
+.markdown-custom-spacing code,
+.markdown-custom-spacing pre,
+.markdown-custom-spacing em,
+.markdown-custom-spacing strong,
+.markdown-custom-spacing span:not(.search-match-highlight),
+.markdown-custom-spacing p *,
+.markdown-custom-spacing h1 *,
+.markdown-custom-spacing h2 *,
+.markdown-custom-spacing h3 *,
+.markdown-custom-spacing h4 *,
+.markdown-custom-spacing h5 *,
+.markdown-custom-spacing h6 *,
+.markdown-custom-spacing li *,
+.markdown-custom-spacing blockquote * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  cursor: text !important;
+}
+
+/* Ensure elements display correctly for selection and layout */
+.markdown-custom-spacing p,
+.markdown-custom-spacing h1,
+.markdown-custom-spacing h2,
+.markdown-custom-spacing h3,
+.markdown-custom-spacing h4,
+.markdown-custom-spacing h5,
+.markdown-custom-spacing h6,
+.markdown-custom-spacing ul,
+.markdown-custom-spacing ol,
+.markdown-custom-spacing blockquote,
+.markdown-custom-spacing pre,
+.markdown-custom-spacing code {
+  display: block !important; /* Ensure block display */
+  position: static !important; /* Override potential relative/absolute positioning */
+  padding: 0 !important; /* Reset padding */
+  text-indent: 0 !important; /* Reset indent */
+  letter-spacing: normal !important; /* Reset letter spacing */
+  white-space: normal !important; /* Allow normal wrapping */
+}
+
+/* Ensure code blocks and preformatted text behave */
+.markdown-custom-spacing code,
+.markdown-custom-spacing pre {
+  white-space: pre-wrap !important; /* Allow wrapping within code */
+  overflow-wrap: break-word !important; /* Break long unbroken strings */
+  word-wrap: break-word !important;
+}
+
+.markdown-custom-spacing pre {
+  overflow-x: auto !important; /* Allow horizontal scroll if needed */
+  max-width: 100% !important;
+}
+
+/* Remove invisible ::before/::after that can cause selection gaps */
+.markdown-custom-spacing p::before,
+.markdown-custom-spacing p::after,
+.markdown-custom-spacing h1::before,
+.markdown-custom-spacing h1::after,
+.markdown-custom-spacing h2::before,
+.markdown-custom-spacing h2::after,
+.markdown-custom-spacing h3::before,
+.markdown-custom-spacing h3::after,
+.markdown-custom-spacing h4::before,
+.markdown-custom-spacing h4::after,
+.markdown-custom-spacing h5::before,
+.markdown-custom-spacing h5::after,
+.markdown-custom-spacing h6::before,
+.markdown-custom-spacing h6::after,
+.markdown-custom-spacing li::before,
+.markdown-custom-spacing li::after,
+.markdown-custom-spacing blockquote::before,
+.markdown-custom-spacing blockquote::after {
+  display: none !important;
+}
+
+/* Fix text justification issues affecting selection */
+.markdown-custom-spacing p,
+.markdown-custom-spacing blockquote {
+  text-align: left !important;
+  text-justify: none !important;
+}
+
+/* ==========================================================================
+   Spacing and Typography
+   ========================================================================== */
+
+/* Base margin for block elements */
+.markdown-custom-spacing p,
+.markdown-custom-spacing ul,
+.markdown-custom-spacing ol,
+.markdown-custom-spacing blockquote,
+.markdown-custom-spacing pre,
+.markdown-custom-spacing table {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Increased margin between consecutive paragraphs */
+.markdown-custom-spacing p + p {
+  margin-top: 1.25em !important;
+}
+
+/* Heading spacing */
+.markdown-custom-spacing h1 {
+  margin-top: 2.1em !important;
+  margin-bottom: 0.5em !important;
+  line-height: 1.2 !important;
+}
+.markdown-custom-spacing h2 {
+  margin-top: 2em !important;
+  margin-bottom: 0.5em !important;
+}
+.markdown-custom-spacing h3,
+.markdown-custom-spacing h4,
+.markdown-custom-spacing h5,
+.markdown-custom-spacing h6 {
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Word wrapping for headings */
+.markdown-custom-spacing h1,
+.markdown-custom-spacing h2,
+.markdown-custom-spacing h3,
+.markdown-custom-spacing h4,
+.markdown-custom-spacing h5,
+.markdown-custom-spacing h6 {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Special styling for all-caps h1 */
+.markdown-custom-spacing h1.uppercase-heading {
+  letter-spacing: -0.01em !important;
+}
+
+/* Adjust spacing for the very first element */
+.markdown-custom-spacing > *:first-child {
+  margin-top: 1.5em !important;
+}
+.markdown-custom-spacing > h1:first-child {
+  margin-top: 1em !important;
+}
+.markdown-custom-spacing > h2:first-child {
+  margin-top: 1.25em !important;
+}
+.markdown-custom-spacing > h3:first-child,
+.markdown-custom-spacing > h4:first-child,
+.markdown-custom-spacing > h5:first-child,
+.markdown-custom-spacing > h6:first-child {
+  margin-top: 1em !important;
+}
+
+/* List styling */
+.markdown-custom-spacing ul,
+.markdown-custom-spacing ol {
+  padding-left: 1.5em !important;
+}
+
+.markdown-custom-spacing li {
+  display: list-item !important;
+  list-style-position: outside !important;
+  margin-top: 0.25em !important; /* Adjust spacing between list items */
+}
+
+.markdown-custom-spacing ul li {
+  list-style-type: disc !important;
+}
+.markdown-custom-spacing ul ul li {
+  list-style-type: circle !important;
+}
+.markdown-custom-spacing ul ul ul li {
+  list-style-type: square !important;
+}
+.markdown-custom-spacing ol li {
+  list-style-type: decimal !important;
+}
+
+.markdown-custom-spacing li::marker {
+  color: currentColor !important;
+  font-size: 0.875em !important;
+  display: inline-block !important;
+}
+
+/* ==========================================================================
+   Responsive Handling (Tables, Math, Images)
+   ========================================================================== */
+
+/* Make tables horizontally scrollable */
+.scrollable-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-bottom: 1em;
+  display: block; /* Ensure it takes block layout */
+}
+
+.scrollable-table-container table {
+  margin: 0;
+  width: auto; /* Allow table to be wider than container */
+  min-width: 100%; /* Ensure it fills container width at minimum */
+}
+
+/* Make LaTeX math expressions horizontally scrollable */
+.scrollable-math {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  display: block;
+}
+
+/* Responsive Images */
+.markdown-custom-spacing img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block; /* Ensure block display for centering/margins */
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+/* Responsive heading adjustments */
+@media (max-width: 768px) {
+  .markdown-custom-spacing h1 {
+    line-height: 1.1 !important;
+  }
+}
+
+/* ==========================================================================
+   Search Highlighting
+   ========================================================================== */
+@keyframes fade-highlight {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 4px rgba(255, 213, 0, 0.9);
+    transform: scale(1.05);
+  }
+  20% {
+    opacity: 1;
+    box-shadow: 0 0 0 4px rgba(255, 213, 0, 0.8);
+    transform: scale(1.05);
+  }
+  70% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 2px rgba(255, 213, 0, 0.4);
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(255, 213, 0, 0);
+    transform: scale(1);
+  }
+}
+
+.search-match-highlight {
+  pointer-events: none;
+  z-index: 100;
+  /* Animation applied dynamically via JS */
+}
+
+/* Ensure highlighted elements are positioned correctly */
+.md-content-block pre,
+.md-content-block table,
+.markdown-custom-spacing pre, /* Added for consistency */
+.markdown-custom-spacing table {
+  position: relative;
+}
+
+/* ==========================================================================
+   Tailwind Prose Overrides / Integration
+   ========================================================================== */
+
+/* Apply readability width and centering if using .prose */
+/* Note: Selection rules above already cover elements within .prose */
+.markdown-custom-spacing.prose,
+.markdown-custom-spacing .prose {
+  /* If .markdown-custom-spacing IS or CONTAINS .prose */
+  max-width: 65ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important; /* Override prose padding if needed */
+  padding-right: 0 !important;
+}
+
+/* Specific prose paragraph margin override if needed */
+.markdown-custom-spacing.prose p,
+.markdown-custom-spacing .prose p {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+/* Ensure links wrap correctly */
+.markdown-custom-spacing a {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important; /* Allow breaking long links */
+}
